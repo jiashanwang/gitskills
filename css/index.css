@@ -1,5 +1,5 @@
 *{padding:0;margin:0;}
-body{background-image:linear-gradient(120deg,#510000 0%,#0D0000 100%)}
+body{background-image:linear-gradient(#530000 0%,#222222 6%)}
 
 #hd p{font-size:2em;font-weight:bold;color:#fff;font-style:italic;}
 #hd div{text-align:center;font-size:1.8em;color:#0f0;}
@@ -25,5 +25,46 @@ body{background-image:linear-gradient(120deg,#510000 0%,#0D0000 100%)}
 .small{width:70%;height:20%;}
 #divSmall ul{overflow:hidden;}
 #divSmall li img{float:left;}
+a:hover{text-decoration:none;}
+/*修改 的样式*/
+#tabs td:hover{
+	color:#fff;
+	cursor:pointer;
+	337AB7
+}
+#tabs td{
+	color:#5E7C86;
+}
+footer{
+}	background:#222222;
+
+footer span{
+	displya:inline-block;
+	height:50px;
+	line-height: 50px;
+}
+#nav ul li a{
+	border-bottom:0;
+	border-radius: 3px;
+}
+#nav{
+	height:41px;
+}
+#divSmall img{
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    -ms-transition: -ms-transform 0.3s ease-out;
+}
+#divSmall img:hover{
+	-webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.red{
+	background:red;
+}
 
 
