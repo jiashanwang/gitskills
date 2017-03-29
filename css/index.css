@@ -43,6 +43,8 @@ footer span{
 	display:inline-block;
 	height:50px;
 	line-height: 50px;
+	color:#2769B7;
+	cursor:pointer;
 }
 #nav ul li a{
 	border-bottom:0;
