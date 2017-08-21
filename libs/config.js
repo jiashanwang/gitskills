@@ -46,7 +46,7 @@ define(["app"], function (app) {
                     templateUrl: 'pages/navbar.html'
                 },
                 'main@JavaScript': {
-                    templateUrl: 'pages/Javascript.html',
+                    templateUrl: 'pages/JavaScript.html',
                 },
                 "leftBar@JavaScript": {
                     templateUrl: 'pages/JSLeftBar.html',
