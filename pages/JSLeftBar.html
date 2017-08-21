@@ -1,0 +1,20 @@
+﻿<div ng-controller="JavaScript_controller">
+    <div id="SidebarJS">
+        <div id="JSLeftBar">
+            <div id="leftContents">
+                <ul>
+                    <li ng-repeat="item in categorys">
+                        <p ng-click="showStatus(item,$event)">
+                            <i class="iconfont icon-jiantouyou" ng-class="{false: 'iconfont icon-jiantouyou', true: 'iconfont icon-jiantouxia'}[item.isActive]"></i>                            {{item.name}}
+                        </p>
+                        <ul ng-show="item.isActive">
+                            <li ng-repeat="x in item.contents"><a ui-sref="JavaScript.">{{x}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="JSRightBar">
+        </div>
+    </div>
+</div>

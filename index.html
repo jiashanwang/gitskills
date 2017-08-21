@@ -1,158 +1,33 @@
-<!DOCTYPE >
-<html lang="zh-ch">
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zn-cn">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/index.css" />
-	<script type="text/javascript" src="jquery-1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/indexPage.js"></script>
-	<title>跑车俱乐部 </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, ">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/styles.less" rel="stylesheet/less">
+    <link href="//at.alicdn.com/t/font_391388_wpnnlfzty3yaxlxr.css" rel="stylesheet">
+    <!-- <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-ui-router.min.js"></script>
+    <script src="libs/jquery-1.11.1.min.js"></script>
+    <script src="libs/config.js"></script>
+    <script src="direcitve/hightendusers.js"></script>
+    <script src="direcitve/apple.js"></script> -->
+    <title>angular单页面应用</title>
 </head>
-<body class="container-fluid">
-	<header class="page-header">
-		<div id="hd">
-			<p class="pull-left">本色不改</p>
-			<p class="pull-right">性能至上</p>
-			<p style="clear:both;"></p>
-			<div>跑车俱乐部</div>
-		
-		</div>
-		<div id="nav" class="navbar navbar-default">
-			<ul class="nav nav-tabs nav-justified">
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">车型简介&nbsp;&nbsp;<span class="caret"></span></a>
-					<ul class="dropdown-menu nav">
-						<li><a href="#">布加迪EB16.4 Veyron限量版</a></li>
-						<li class="divider"></li>
-						<li><a href="#">兰博基尼-Aventador</a></li>
-						<li class="divider"></li>
-						<li><a href="#">法拉利LaFerrari</a></li>
-						<li class="divider"></li>
-						<li><a href="#">保时捷911</a></li>
-						<li class="divider"></li>
-						<li><a href="#">道奇蝰蛇</a></li>
-						<li class="divider"></li>
-						<li><a href="#">福特野马</a></li>
-						<li class="divider"></li>
-						<li><a href="#">雪佛兰克尔维特</a></li>
-						<li class="divider"></li>
-						<li><a href="#">了解更多......</a></li>
-					</ul>
-				</li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">品牌历史&nbsp;&nbsp;<span class="caret"></span></a>
-					<ul class="dropdown-menu nav">
-						<li><a href="#">布加迪威龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>></a></li>
-						<li class="divider"></li>
-						<li><a href="#">兰博基尼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>></a></li>
-						<li class="divider"></li>
-						<li><a href="#">法拉利&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>></a></li>
-						<li><a href="#">保时捷&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>></a></li>
-						<li class="divider"></li>
-						<li><a href="#">道奇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>></a></li>
-					</ul>
-				</li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">赛事相关&nbsp;&nbsp;<span class="caret"></span></a>
-					<ul class="dropdown-menu nav">
-						<li><a href="#">F1方程式塞车  GP2</a></li>
-						<li class="divider"></li>
-						<li><a href="#">F1方程式赛车 </a></li>
-						<li class="divider"></li>
-						<li><a href="#">GP2</a></li>
-						<li class="divider"></li>
-						<li><a href="#">勒芒24小时耐力赛</a></li>
-						<li class="divider"></li>
-						<li><a href="#">super formula</a></li>
-					</ul>
-				</li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们&nbsp;&nbsp;<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">活动通知...</a></li>
-						
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</header>
-	<div class="position">-- 精彩视频 --</div>
-	<div class="page-header">
-		<video src="video/Porsche.mp4" loop="loop" controls width="100%" autoplay>
-			
-		</video>
-	</div>
-	<div class="position">-- 名车鉴赏 --</div><br>
-	<section>
-		<div id="imgList">
-			<p id="p1"><span class="glyphicon glyphicon-backward"></span></p>
-			<ul>
-				<li><a href="#">
-					<img src="images/B1.jpg" alt="img" class="img img-responsive">
-				</a></li>
-				<li class="hidden"><a href="#">
-					<img src="images/saishi5.jpg" alt="img" class="img img-responsive">
-				</a></li>
-				<li class="hidden"><a href="#">
-					<img src="images/boashijie.jpg" alt="img" class="img img-responsive">
-				</a></li>
-				<li class="hidden"><a href="#">
-					<img src="images/falali.jpg" alt="img" class="img img-responsive">
-				</a></li>
-			</ul>
-			<p id="p2"><span class="glyphicon glyphicon-forward"></span></p>
-			<div id="divP">
-				<p></p>
-				<p></p>
-				<p></p>
-				<p></p>
-				<div style="clear:both;"></div>
-			</div>
-		</div>
-	</section>
-	
-	<div id="divSmall" class="row page-header">
-		<div class="col-xs-3 col-sm-3 col-md-3">
-			<img src="images/F4.jpg" alt="img" class="small img img-responsive">
-			<br>
-				<p><a href="#">好车推荐&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></p>
-		</div>
-		<div class="col-xs-3 col-sm-3 col-md-3">
-			<img src="images/saishi2.jpg" alt="img" class="small img img-responsive">
-			<br>
-				<p><a href="#">车友交流&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></p>
-		</div>
-		<div class="col-xs-3 col-sm-3 col-md-3">
-			<img src="images/saishi1.jpg" alt="img" class="small img img-responsive">
-			<br>
-				<p><a href="#">山路PK赛&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></p>
-		</div>
-		<div class="col-xs-3 col-sm-3 col-md-3">
-			<img src="images/D8.jpg" alt="img" class="small img img-responsive">
-			<br>
-				<p><a href="#">名车鉴赏&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span></a></p>
-		
-	</div>
-	<div id="tabs">
-		<table class="table">
-			<thead>
-				<th><td>车型信息</td><td>尊享服务</td><td>名车风范</td><td>特色介绍</td></th>
-			</thead>
-			<tbody>
-				<tr><td></td><td>法拉利458</td><td>豪车试驾</td><td>顶级跑车</td><td>12缸双涡轮增压</td></tr>
-				<tr><td></td><td>福特野马</td><td>豪车试驾</td><td>环球名车</td><td>6缸机器增压</td></tr>
-				<tr><td></td><td>保时捷911</td><td>豪车试驾</td><td>环球名车</td><td>V8机器增压</td></tr>
-				<tr><td></td><td>兰博基尼-Aventador</td><td>豪车试驾</td><td>顶级跑车</td><td>V12涡轮增压</td></tr>
-				<tr><td></td><td>布加迪EB16.4 Veyron限量版</td><td>豪车试驾</td><td>顶级跑车</td><td>V12涡轮增压</td></tr>
-				
-			</tbody>
-		</table>
-	</div>
-	<footer class="navbar navbar-stacked-bottom text-center">
-		<span>版权信息</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<span>法律声明</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<span>加入我们</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<span>隐私政策</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<span>车友招募</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		
-	</footer>
+
+<body>
+    <div id="head">
+        <p><i>家</i>&emsp;里 的 金&emsp;<i>山</i></p>
+         <p>I T</p> 
+        <p>Daily &emsp;drip</p>
+    </div>
+    <div ui-view=""></div>
+    <!-- 首先需要加载requirejs 由它来统一管理你需要加载的所有代码 -->
+    <script src="js/require.js" defer async="true" data-main="js/main"></script>
+    <!-- 1 。async属性表明这个文件需要异步加载，避免网页失去响应。IE不支持这个属性，只支持defer，所以把defer也写上 -->
+    <!-- 2 。data-main属性的作用是，指定网页程序的主模块。在上例中，就是js目录下面的main.js，这个文件会第一个被require.js加载。由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。 -->
+    <!-- 主模块就是指整个网页的入口代码 -->
 </body>
+
 </html>
