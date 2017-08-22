@@ -16,6 +16,7 @@ require.config({
         "Python": "../controllers/Python_controller",
         "Internet": "../controllers/Internet_controller",
         "Essay": "../controllers/Essay_controller",
+        "Others": "../controllers/Others_controller",
     },
     //require.config()接受一个配置对象，这个对象除了有前面说过的paths属性之外，还有一个shim属性，
     // 专门用来配置不兼容的模块。具体来说，每个模块要定义（1）exports值（输出的变量名），表明这个模块外部调用时的名称；（2）deps数组，表明该模块的依赖性。
@@ -65,8 +66,8 @@ require(
         "JavaScript",
         "Python",
         "Internet",
-        "Essay"
-
+        "Essay",
+        "Others"
     ],
     function () {
         //angular.element()方法：当document加载完成的时候，开始执行回调

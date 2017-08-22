@@ -8,7 +8,7 @@
                             <i class="iconfont icon-jiantouyou" ng-class="{false: 'iconfont icon-jiantouyou', true: 'iconfont icon-jiantouxia'}[item.isActive]"></i>                            {{item.name}}
                         </p>
                         <ul ng-show="item.isActive">
-                            <li ng-repeat="x in item.contents"><a ui-sref="{{x.contentName}}">{{x.name}}</a></li>
+                            <li ng-repeat="x in item.contents" ui-sref="{{x.contentName}}" ng-class="{true:'showBackColor1',false:'hideBackColor1'}[x.isShow]" ng-click="isShow(x)">{{x.name}}</li>
                         </ul>
                     </li>
                 </ul>

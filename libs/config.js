@@ -18,7 +18,7 @@ define(["app"], function (app) {
                     templateUrl: "pages/navbar.html"
                 },
                 "main@index": {
-                    templateUrl: "pages/Essay.html"
+                    templateUrl: "pages/JavaScript.html"
                 }
             }
         }).state("Python", {
@@ -49,35 +49,67 @@ define(["app"], function (app) {
                     templateUrl: 'pages/JavaScript.html',
                 },
                 "leftBar@JavaScript": {
-                    templateUrl: 'pages/JSLeftBar.html',
+                    templateUrl: 'pages/JavaScript/JSLeftBar.html',
                 },
-                "rightMain@JavaScript":{
-                     templateUrl: 'pages/rightMain.html',
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/JSRightMain.html',
                 }
-
             }
             //设置每个标签的内容展示页面--》二级页面
         }).state("JavaScript.colorSelected", {
             url: "/colorSelected",
             views: {
-                "rightMain@JavaScript":{
-                     templateUrl: 'pages/colorSelected.html',
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/colorSelected.html',
                 }
             }
             //canvans 页面展示
         }).state("JavaScript.canvas", {
             url: "/canvas",
             views: {
-                "rightMain@JavaScript":{
-                     templateUrl: 'pages/canvas.html',
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/canvas.html',
                 }
             }
             //多媒体页面展示
-        }).state("JavaScript.multimedia",{
-            url:"/multimedia",
-            views:{
-                 "rightMain@JavaScript":{
-                     templateUrl: 'pages/multimedia.html',
+        }).state("JavaScript.multimedia", {
+            url: "/multimedia",
+            views: {
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/multimedia.html',
+                }
+            }
+        }).state("Others", {
+            url: "/Others",
+            views: {
+                '': {
+                    templateUrl: "pages/main.html"
+                },
+                'topbar@Others': {
+                    templateUrl: 'pages/navbar.html'
+                },
+                'main@Others': {
+                    templateUrl: 'pages/Others.html',
+                },
+                "OthersLeftBar@Others": {
+                    templateUrl: 'pages/Others/OthersLeftBar.html',
+                },
+                "OthersRightMain@Others": {
+                    templateUrl: 'pages/Others/OthersRightBar.html',
+                }
+            }
+        }).state("Others.apidoc", {
+            url: "/apidoc",
+            views: {
+                "OthersRightMain@Others": {
+                    templateUrl: 'pages/Others/apidoc.html',
+                }
+            }
+        }).state("Others.gulp", {
+            url: "/gulp",
+            views: {
+                "OthersRightMain@Others": {
+                    templateUrl: 'pages/Others/gulp.html',
                 }
             }
         })
