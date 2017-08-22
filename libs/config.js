@@ -56,7 +56,32 @@ define(["app"], function (app) {
                 }
 
             }
-        }).state("Internet", {
+            //设置每个标签的内容展示页面--》二级页面
+        }).state("JavaScript.colorSelected", {
+            url: "/colorSelected",
+            views: {
+                "rightMain@JavaScript":{
+                     templateUrl: 'pages/colorSelected.html',
+                }
+            }
+            //canvans 页面展示
+        }).state("JavaScript.canvas", {
+            url: "/canvas",
+            views: {
+                "rightMain@JavaScript":{
+                     templateUrl: 'pages/canvas.html',
+                }
+            }
+            //多媒体页面展示
+        }).state("JavaScript.multimedia",{
+            url:"/multimedia",
+            views:{
+                 "rightMain@JavaScript":{
+                     templateUrl: 'pages/multimedia.html',
+                }
+            }
+        })
+        .state("Internet", {
             url: "/Internet",
             views: {
                 '': {
