@@ -1,12 +1,16 @@
 define(["app"], function (app) {
     app.controller("JavaScript_controller", function ($scope) {
         // 初始化变量
+        $scope.InitPage = function (){
+           // pass
+        };
         $scope.categorys = [
             {
                 name: "HTML", contents: [
-                    { name: "<input>之颜色", contentName: "JavaScript.colorSelected" },
-                    { name: "<input>之canvas", contentName: "JavaScript.canvas" },
-                    { name: "<input>之多媒体", contentName: "JavaScript.multimedia" }
+                    { name: "块级元素", contentName: "JavaScript.colorSelected" },
+                    { name: "行内元素", contentName: "JavaScript.canvas" },
+                    { name: "行内块元素", contentName: "JavaScript.multimedia" },
+                    { name: "盒子模型", contentName: "JavaScript.multimedia" }
                 ]
             },
             {
@@ -21,6 +25,19 @@ define(["app"], function (app) {
                     { name: "User-Agent", contentName: "JavaScript.transform" },
                     { name: "浏览器内核", contentName: "JavaScript.transform" }
                 ]
+            },
+            {
+                name: "JQuery", contents: [
+                    { name: "DOM操作", contentName: "JavaScript.transform" },
+                    { name: "Ajax事件", contentName: "JavaScript.transform" }
+                ]
+            },
+            {
+                name: "Angular", contents: [
+                    { name: "指令", contentName: "JavaScript.transform" },
+                    { name: "路由", contentName: "JavaScript.transform" },
+                    { name: "模块", contentName: "JavaScript.transform" }
+                ]
             }
         ];
         // 每一列背景色切换--》代码封装
@@ -33,7 +50,7 @@ define(["app"], function (app) {
         function addItems(b) {
             for (var i = 0, len = $scope.categorys.length; i < len; i++) {
                 if (b == "t") {
-                    $scope.categorys[i].isActive = true;
+                    $scope.categorys[i].isActive = false;
                     isShowStatus($scope.categorys[i])
                 } else {
                     isShowStatus($scope.categorys[i])

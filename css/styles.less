@@ -54,7 +54,7 @@
             }
         }
 }
-#OthersLeftBar {
+#OthersLeftBar,#EssayLeftBar{
     padding-right: 30px;
     padding-top: 80px;
     margin-left: 50px;
@@ -62,11 +62,11 @@
     min-height: 850px;
     border-right: 1px solid #DDDDDD;
 }
-#OthersLeftBar ul {
+#OthersLeftBar ul ,#EssayLeftBar ul{
     padding-right:25px;
 
 }
-#OthersLeftBar ul li{
+#OthersLeftBar ul li,#EssayLeftBar ul li{
    cursor:pointer;
    color:#0483BB;
    padding:5px 0 5px 60px;
@@ -79,29 +79,39 @@
     background: #fff;
     min-height:900px;
 }
-#JavaScriptContent .jsPageLeftBar,#OthersContent .OthersPageLeftBar{
+// #JavaScriptContent .jsPageLeftBar,#OthersContent .OthersPageLeftBar,#PythonContent .pyPageLeftBar{
+//     width:300px;
+//     float:left;
+// }
+.PageLeftBar{
     width:300px;
     float:left;
 }
-#JavaScriptContent .jsPageRightBar,#OthersContent .OthersPageRightBar{
+// #JavaScriptContent .jsPageRightBar,#OthersContent .OthersPageRightBar,#PythonContent .pyPageRightBar{
+//     float:left;
+//     flex:1;
+// }
+.PageRightBar{
     float:left;
     flex:1;
 }
-#JavaScriptContent,#OthersContent{
+#JavaScriptContent,#OthersContent,#EssayContent{
     display: flex;
 }
 #topBar i{
     font-size:@fontSize;
     color:#FAFAD2;
 }
-#OthersLeftBar .showBackColor,#leftContents .showBackColor1{
+#OthersLeftBar .showBackColor,#leftContents .showBackColor1,#EssayLeftBar .showBackColor{
     background:#0483BB;
     color:#fff;
-   
 }
-#OthersLeftBar .hideBackColor,#leftContents .hideBackColor1{
+#OthersLeftBar .hideBackColor,#leftContents .hideBackColor1,#EssayLeftBar .hideBackColor{
      background:#fff;
 }
 #leftContents .showBackColor1{
     text-align:center;
+}
+p.pHover:hover{
+    background:#F1F1F1;
 }

@@ -33,6 +33,12 @@ define(["app"], function (app) {
                 'main@Python': {
                     templateUrl: 'pages/Python.html',
                 },
+                "leftBar@Python": {
+                    templateUrl: 'pages/Python/PyLeftBar.html',
+                },
+                "rightMain@Python": {
+                    templateUrl: 'pages/Python/PyRightMain.html',
+                }
 
             }
 
@@ -91,11 +97,11 @@ define(["app"], function (app) {
                 'main@Others': {
                     templateUrl: 'pages/Others.html',
                 },
-                "OthersLeftBar@Others": {
-                    templateUrl: 'pages/Others/OthersLeftBar.html',
+                "leftBar@Others": {
+                    templateUrl: 'pages/Others/leftBar.html',
                 },
-                "OthersRightMain@Others": {
-                    templateUrl: 'pages/Others/OthersRightBar.html',
+                "rightMain@Others": {
+                    templateUrl: 'pages/Others/rightMain.html',
                 }
             }
         }).state("Others.apidoc", {
@@ -112,8 +118,7 @@ define(["app"], function (app) {
                     templateUrl: 'pages/Others/gulp.html',
                 }
             }
-        })
-        .state("Internet", {
+        }).state("Internet", {
             url: "/Internet",
             views: {
                 '': {
@@ -125,6 +130,12 @@ define(["app"], function (app) {
                 'main@Internet': {
                     templateUrl: 'pages/Internet.html',
                 },
+                "leftBar@Internet": {
+                    templateUrl: 'pages/Internet/IntLeftBar.html',
+                },
+                "rightMain@Internet": {
+                    templateUrl: 'pages/Internet/IntRightMain.html',
+                }
             }
         }).state("Essay", {
             url: "/Essay",
@@ -138,6 +149,12 @@ define(["app"], function (app) {
                 'main@Essay': {
                     templateUrl: 'pages/Essay.html',
                 },
+                "leftBar@Essay": {
+                    templateUrl: 'pages/Essay/EsyLeftBar.html',
+                },
+                "rightMain@Essay": {
+                    templateUrl: 'pages/Essay/EsyRightMain.html',
+                }
             }
         })
     });

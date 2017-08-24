@@ -1,0 +1,9 @@
+﻿<div ng-controller="Essay_controller">
+     <div id="SidebarEssay">
+        <div id="EssayLeftBar">
+            <ul>
+                <li ng-repeat="item in categorys" ui-sref="{{item.contentName}}" ng-click="selected(item)" ng-class="{true:'showBackColor',false:'hideBackColor'}[item.isActive]">{{item.name}}</li>
+            </ul>
+        </div>
+    </div> 
+</div>
