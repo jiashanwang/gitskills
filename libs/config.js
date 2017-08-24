@@ -18,10 +18,31 @@ define(["app"], function (app) {
                     templateUrl: "pages/navbar.html"
                 },
                 "main@index": {
-                    templateUrl: "pages/JavaScript.html"
+                    templateUrl: "pages/AuthorIndex.html"
                 }
             }
-        }).state("Python", {
+        })
+        .state("AuthorIndex", {
+            url: "/AuthorIndex",
+            views: {
+                '': {
+                    templateUrl: "pages/main.html"
+                },
+                'topbar@AuthorIndex': {
+                    templateUrl: 'pages/navbar.html'
+                },
+                'main@AuthorIndex': {
+                    templateUrl: 'pages/AuthorIndex.html',
+                },
+                "leftBar@AuthorIndex": {
+                    templateUrl: 'pages/AuthorIndex/AuthLeftBar.html',
+                },
+                "rightMain@AuthorIndex": {
+                    templateUrl: 'pages/AuthorIndex/AuthRightMain.html',
+                }
+            }
+        })
+        .state("Python", {
             url: "/Python",
             views: {
                 '': {

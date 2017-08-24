@@ -4,7 +4,7 @@
     height:60px;
     background-color:#0593D3;
     ul{
-        margin-left:10%;
+        margin-left:5%;
         overflow:hidden;
         li{
             float:left;
@@ -24,6 +24,8 @@
 }
 #topBar .author{
    margin-right:50px;
+   width:233px;
+   text-align:center;
 }
 #leftContents{
     padding-right:30px;
@@ -54,7 +56,7 @@
             }
         }
 }
-#OthersLeftBar,#EssayLeftBar{
+#OthersLeftBar,#EssayLeftBar,#AuthorLeftBar{
     padding-right: 30px;
     padding-top: 80px;
     margin-left: 50px;
@@ -62,11 +64,11 @@
     min-height: 850px;
     border-right: 1px solid #DDDDDD;
 }
-#OthersLeftBar ul ,#EssayLeftBar ul{
+#OthersLeftBar ul ,#EssayLeftBar ul,#AuthorLeftBar ul{
     padding-right:25px;
 
 }
-#OthersLeftBar ul li,#EssayLeftBar ul li{
+#OthersLeftBar ul li,#EssayLeftBar ul li,#AuthorLeftBar ul li{
    cursor:pointer;
    color:#0483BB;
    padding:5px 0 5px 60px;
@@ -79,18 +81,10 @@
     background: #fff;
     min-height:900px;
 }
-// #JavaScriptContent .jsPageLeftBar,#OthersContent .OthersPageLeftBar,#PythonContent .pyPageLeftBar{
-//     width:300px;
-//     float:left;
-// }
 .PageLeftBar{
     width:300px;
     float:left;
 }
-// #JavaScriptContent .jsPageRightBar,#OthersContent .OthersPageRightBar,#PythonContent .pyPageRightBar{
-//     float:left;
-//     flex:1;
-// }
 .PageRightBar{
     float:left;
     flex:1;
@@ -115,3 +109,15 @@
 p.pHover:hover{
     background:#F1F1F1;
 }
+#AuthorLeftBar{
+    .mySelfPhoto{
+        margin-left:10px;
+        width:150px;
+        height:150px;
+        img{
+            width:150px;
+            height:150px;
+            }
+        }
+}
+

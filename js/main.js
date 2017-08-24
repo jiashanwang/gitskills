@@ -12,6 +12,7 @@ require.config({
         "app": "app",
         "mock": "../libs/mock-min",//mock默认采用AMD规范写的
         "config": "../libs/config",//配置路由
+        "AuthorIndex": "../controllers/AuthorIndex_controller",
         "JavaScript": "../controllers/JavaScript_controller",
         "Python": "../controllers/Python_controller",
         "Internet": "../controllers/Internet_controller",
@@ -63,6 +64,7 @@ require(
         "config",
         "less",
         "jquery",
+        "AuthorIndex",
         "JavaScript",
         "Python",
         "Internet",
