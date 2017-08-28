@@ -62,7 +62,24 @@ define(["app"], function (app) {
                 }
 
             }
-
+        //数据结构
+        }).state("Python.DataStructure", {
+            url: "/DataStructure",
+            views: {
+                "rightMain@Python": {
+                    templateUrl: 'pages/Python/DataStructure.html',
+                }
+            }
+            //canvans 页面展示
+        })
+        .state("Python.Function", {
+            url: "/Function",
+            views: {
+                "rightMain@Python": {
+                    templateUrl: 'pages/Python/Function.html',
+                }
+            }
+            //canvans 页面展示
         }).state("JavaScript", {
             url: "/JavaScript",
             views: {

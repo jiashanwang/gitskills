@@ -1,0 +1,72 @@
+﻿<div id="PythonFunc">
+    <h4 style="color:#666">Python - 模块与函数</h4>
+    <hr>
+    <p> Python的程序由包 (package) 、模块 (module) 、和函数组成。模块是处理某一类问题的集合,模块由函数和类组成。包是由一系列模块组成的集合。</p>
+    <p>包就是一个完成特定任务的工具箱，Python提供了许多有用的工具包，如字符串处理，图形用户接口，Web应用，图形图像处理等。使用自带的这些工具包，可以提高程序员的开发效率。这些自带的工具包和模块安装在Python的安装目录下的Lib子目录中。</p>
+    <p>例如：Lib目录中的xml文件夹。xml文件夹就是一个包，这个包用于完成XML的应用开发。xml包中有几个子包：dom,sax,etree和parsers.文件__init__.py是xml包的注册文件，如果没有该文件，Python
+        将不能识别xml包。在系统字典表中定义了xml包。</p>
+    <p class="Premark">注意：包必须至少包含一个__init__.py文件。__init__.py文件的内容可以为空，它用于标识当前文件夹是一个包。</p>
+    <h4>模块</h4>
+    <p>模块是Python中重要的概念，Python 的程序是由一个个模块组成的。前面已经接触到了模块，一个Python文件就是一个模块。</p>
+    <h5>1. 模块的创建</h5>
+    <p>模块把一组相关的函数或代码组织到一个文件中。一个文件即是一个模块，模块由代码，函数或类组成。创建一个名为 myModule.py 的文件，即定义了一个名为myModule的模块，在myModule.py模块中定义一个函数func()
+        和一个类 myClass。MyClass 类中定义一个方法myFunc()。</p>
+    <p># 自定义模块<br> &emsp; &emsp; def func():<br> &emsp;&emsp;&emsp;&emsp;print("MyModule.func()")
+        <br>
+        <br> &emsp; &emsp; class MyClass:<br> &emsp;&emsp;&emsp;&emsp;def myFunc:(self):<br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print("MyModule.MyClass.myFunc()")
+    </p>
+    <p>然后在myModule.py所在的目录下创建一个 call_myModule.py 的文件。 在该文件中调用myModule模块的函数和类。</p>
+    <p>#调用自定义模块的类和函数<br> &emsp; &emsp; import myModule # 导入moudle <br> &emsp; &emsp; myModule.func()<br> &emsp; &emsp; myClass
+        = myModule.MyClasss()<br> &emsp; &emsp; myClass.myFunc()
+    </p>
+    <p class="Premark">备注：调用模块的函数/类时，需要加模块前缀（myModule），否则Python不知道 func() / MyClass 所在的命令空间。<br> myModule.py 和 call_myModule.py 必须放在同一个目录下，或放在sys.path
+        所列出的目录下；否则，Python 解释器找不到自定义的模块。<br>
+    </p>
+    <p> 当Python 导入一个模块时，Python 首先查找当前路径，然后查找lib目录，site-packages 目录（Pythoh/Lib/site-packages）和环境变量 PYTHONPATH 设置的目录。 如果导入的模块没有找到，在以上路径搜索一下是否含有这个模块。
+        可以通过sys.path 语句搜索模块的查找路径。</p>
+    <h5>2. 模块的导入</h5>
+    <p>在使用一个模块的函数或类之前，首先要导入该模块。模块导入使用 import 语句，模块导入语句的格式如下： <br> <br>
+        <b>import module_name</b><br>
+        <br> 这条语句可以直接导入一个模块。 调用模块的函数或类时，需要以模块名作为前缀，其格式如下所示：<br><br>
+        <b>module_name.func()</b><br>
+        <br> 如果不想在程序中使用前缀符，可以使用from ... import ... 语句导入。 其格式如下所示：<br><br>
+        <b>from module_name import function_name</b> <br>
+        <br> 导入模块下所有的类和函数，可以使用如下格式的import 语句:<br><br>
+        <b>from module_name improt *</b>
+    </p>
+    <p>此外，同一个模块文件可以支持多条 import 语句，Python 的 import 语句可以至于程序中的任意位置，甚至可以放在条件语句中。如下所示：</p>
+    <p>
+        #import 置于条件语句中<br> 
+        &emsp;&emsp;if myModule.count >1: <br>
+        &emsp;&emsp; &emsp;&emsp;myModule.count = 1<br>
+        &emsp;&emsp;else:<br>
+        &emsp;&emsp; &emsp;&emsp;import myModule<br>
+        &emsp;&emsp;print("count =",myModule.count)<br>
+    </p>
+    <h5>3. 模块的属性</h5>
+    <p>模块有一些内置属性，用于完成特定的任务，如__name__ , __doc__ ，每个模块都有一个名称，例如：__name__用于判断当前模块是否是程序的入口，如果当前程序正在被使用，___name__的值为"__main__"。通常给每个模块都添加一个条件语句，用于单独测试该模块的功能。例如：创建一个myModule</p>
+    <p>
+        &emsp;&emsp;if __name__ == "__main__":<br>
+        &emsp;&emsp; &emsp;&emsp;print("myModule作为主程序运行")   <br>
+        &emsp;&emsp;else :<br>
+        &emsp;&emsp; &emsp;&emsp;print("myModule 被另一个模块调用") <br>
+    </p>
+    <p class="Premark">备注：打印 myModule 模块的 doc 属性   ：print(__doc__) 。  由于该模块没有定义文档字符串，所以输出结果为None 。 </p>
+    <h5>4. 模块的内置函数</h5>
+    <p>Python 提供了一个内联模块 buildin 。内联模块定义了一些开发中经常使用的函数，利用这些函数可以实现数据类型的转换， 数据的计算，序列的处理等功能，下面将介绍内联模块中的常用函数。</p>
+    <p>1. filter()</p>
+    <p>filter() 可以对某个序列做过滤处理，判断自定义函数的参数返回的结果是否为真来过滤，病一次性返回处理结果。filter()声明如下所示：</p>
+    <p>
+        &emsp;&emsp;class filter(object)<br>
+        &emsp;&emsp; &emsp;&emsp;filter(function or None,iterable)    -->返回过滤器对象 （filter boject）
+    </p>
+    <p>下面这段代码演示了 filter()过滤序列的功能，从给定的列表中过滤出大于10 的数字</p>
+    <p>
+        &emsp;&emsp;def func(x):<br>
+        &emsp;&emsp; &emsp;&emsp;if (x > 0):<br>
+        &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;return x<br>
+        &emsp;&emsp; print(filter(func,range(-9,10)))<br>
+        &emsp;&emsp; print(lsit(filter(func,range(-9,10))))<br>
+    </p>
+    <p class="Premark">备注：filter()中的过滤函数func()的参数不能为空，否则，没有可以存储sequence元素的变量，func()也不能处理过滤。</p>
+</div>
