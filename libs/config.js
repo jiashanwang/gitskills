@@ -62,15 +62,14 @@ define(["app"], function (app) {
                 }
 
             }
-        //数据结构
-        }).state("Python.DataStructure", {
+        //Python 设置每个标签的内容展示页面--》二级页面
+        }).state("Python.DataStructure", {//数据结构
             url: "/DataStructure",
             views: {
                 "rightMain@Python": {
                     templateUrl: 'pages/Python/DataStructure.html',
                 }
             }
-            //canvans 页面展示
         })
         .state("Python.Function", {
             url: "/Function",
@@ -79,7 +78,6 @@ define(["app"], function (app) {
                     templateUrl: 'pages/Python/Function.html',
                 }
             }
-            //canvans 页面展示
         }).state("JavaScript", {
             url: "/JavaScript",
             views: {
@@ -99,7 +97,8 @@ define(["app"], function (app) {
                     templateUrl: 'pages/JavaScript/JSRightMain.html',
                 }
             }
-            //设置每个标签的内容展示页面--》二级页面
+            //JavaScript 设置每个标签的内容展示页面--》二级页面
+            // HTML 部分
         }).state("JavaScript.colorSelected", {
             url: "/colorSelected",
             views: {
@@ -123,7 +122,31 @@ define(["app"], function (app) {
                     templateUrl: 'pages/JavaScript/multimedia.html',
                 }
             }
-        }).state("Others", {
+         // JavaScript 部分
+        }) .state("JavaScript.Introduction", { //简介
+            url: "/Introduction",
+            views: {
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/Introduction.html',
+                }
+            }
+        }).state("JavaScript.PageJS", { //HTML与JavaScript
+            url: "/PageJS",
+            views: {
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/PageJS.html',
+                }
+            }
+        })
+        .state("JavaScript.Variable", { //变量，作用域，内存问题
+            url: "/Variable",
+            views: {
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/Variable.html',
+                }
+            }
+        })
+        .state("Others", {
             url: "/Others",
             views: {
                 '': {

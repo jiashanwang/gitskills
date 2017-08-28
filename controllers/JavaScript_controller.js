@@ -22,8 +22,22 @@ define(["app"], function (app) {
             },
             {
                 name: "JavaScript", contents: [
-                    { name: "User-Agent", contentName: "JavaScript.transform" },
-                    { name: "浏览器内核", contentName: "JavaScript.transform" }
+                    { name: "JavaScript简介", contentName: "JavaScript.Introduction" },
+                    { name: "在HTML中使用JavaScript", contentName: "JavaScript.PageJS" },
+                    { name: " 变量 作用域 内存", contentName: "JavaScript.Variable" },
+                    { name: "引用类型", contentName: "JavaScript.ReferenceType" },
+                    { name: "函数表达式", contentName: "JavaScript.FunctionExpression" },
+                    { name: "BOM", contentName: "JavaScript.BOM" },
+                    { name: "DOM", contentName: "JavaScript.DOM" },
+                    { name: "事件", contentName: "JavaScript.Event" },
+                    { name: "表单脚本", contentName: "JavaScript.FormScript" },
+                    { name: "使用canvas绘图", contentName: "JavaScript.Canvas" },
+                    { name: "HTML5脚本编程", contentName: "JavaScript.H5Script" },
+                    { name: "JSON", contentName: "JavaScript.JSON" },
+                    { name: "Ajax与Comet", contentName: "JavaScript.AjaxComet" },
+                    { name: "高级技巧", contentName: "JavaScript.AdvancedSkills" },
+                    { name: "客户端存储", contentName: "JavaScript.ClientStorage" },
+                    { name: "新兴的API", contentName: "JavaScript.NewAPI" },
                 ]
             },
             {
