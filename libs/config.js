@@ -71,14 +71,23 @@ define(["app"], function (app) {
                 }
             }
         })
-        .state("Python.Function", {
+        .state("Python.Function", {//模块与函数
             url: "/Function",
             views: {
                 "rightMain@Python": {
                     templateUrl: 'pages/Python/Function.html',
                 }
             }
-        }).state("JavaScript", {
+        })
+        .state("Python.String", {//字符串
+            url: "/String",
+            views: {
+                "rightMain@Python": {
+                    templateUrl: 'pages/Python/String.html',
+                }
+            }
+        })
+        .state("JavaScript", {
             url: "/JavaScript",
             views: {
                 '': {
@@ -123,14 +132,7 @@ define(["app"], function (app) {
                 }
             }
          // JavaScript 部分
-        }) .state("JavaScript.Introduction", { //简介
-            url: "/Introduction",
-            views: {
-                "rightMain@JavaScript": {
-                    templateUrl: 'pages/JavaScript/Introduction.html',
-                }
-            }
-        }).state("JavaScript.PageJS", { //HTML与JavaScript
+        }) .state("JavaScript.PageJS", { //HTML与JavaScript
             url: "/PageJS",
             views: {
                 "rightMain@JavaScript": {

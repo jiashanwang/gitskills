@@ -4,9 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, ">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet"  type="text/css"/>
     <link href="css/styles.less" rel="stylesheet/less">
+    <!-- 字体库样式文件 -->
     <link href="//at.alicdn.com/t/font_391388_wpnnlfzty3yaxlxr.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet" type="text/css">
     <!-- <script src="libs/angular.min.js"></script>
     <script src="libs/angular-ui-router.min.js"></script>
     <script src="libs/jquery-1.11.1.min.js"></script>
@@ -15,7 +17,7 @@
     <script src="direcitve/apple.js"></script> -->
     <title>Daily drip</title>
 </head>
-<body>
+<body onload="prettyPrint()">
     <div ui-view=""></div>
     <!-- 首先需要加载requirejs 由它来统一管理你需要加载的所有代码 -->
     <script src="js/require.js" defer async="true" data-main="js/main"></script>

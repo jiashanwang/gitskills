@@ -113,7 +113,7 @@
     <p>2.1 列表的创建</p>
     <p>List（列表） 是 Python 内置的一种数据结构。它由一系列元素组成，所有元素被包含在一对方括号中。列表创建后，可以执行添加或删除操作。列表创建的格式如下所示：</p>
     <p>list = [元素1，元素2，...]</p>
-    <p>列表的添加可以调用append(),该方法生命方式如下：</p>
+    <p>列表的添加可以调用append(),该方法声明方式如下：</p>
     <p>append(object)</p>
     <p>其中，object可以是元组，列表，字典或任何对象。</p>
     <p>列表的删除可以调用remove()，该方法的声明如下所示：</p>
@@ -198,5 +198,283 @@
     <p>备注：sort() 元素按照首字母升序排序</p>
     <p>  &emsp;&emsp;&emsp;reverse() 反转列表中元素的排列顺序</p>
     <p class="Premark">**备注：在 Python 中，列表是由类 list 实现的。使用函数help(list) 查看list 类的定义，可以快速了解列表所包含的方法。Help函数同样适用于其他Python 类。</p>
+    <p>以下列出了列表的常用方法：</p>
+    <pre>
+        方法名                                             描述
 
+        append(object)                                   在列表的末尾添加一个对象object
+
+        insert(index,object)                             在指定的索引index 处插入一个对象 object
+
+        remove(value)                                    删除列表中首次出现的value 值
+
+        pop([index])                                     删除索引index 指定的值：如果index 不指定，删除列表中最后一个元素
+
+        extend(iterable)                                 将iterable 指定的元素添加到列表的末尾
+
+        index(value,[start,[stop]])                      返回value 出现在列表中的索引
+
+        sort(cmp=None,key=None,reverse=False)            列表的查找
+
+        reverse()                                        列表的反转
+     </pre>
+    <h5>3. 字典结构 </h5>
+    <p>字典是Python 中重要的数据类型，字典是由"键-值"对组成的集合，字典中的"值"通过"键"来引用</p>
+    <h5>3.1 字典的创建</h5>
+    <p>字典由一系列的"键-值"（key - value）对组成，"键-值"对之间用"逗号"隔开，并且被包含在一对花括号中。</p>
+    <p>字典的创建和使用非常简单，创建字典的格式如下所示：</p>
+    <p>dictionary = {key1:value1,key2:value2,...}</p>
+    <p>其中key1,key2，表示字典的key值，value1和value2 等表示字典的value值</p>
+    <p>如果需要创建一各空的字典，只需要一对花括号即可，代码如下：</p>
+    <p>dictionary = {}</p> 
+    <p>下面的代码演示了字典的创建和访问</p>
+    <pre>
+        dict={"a":"apple","b":"banana","g":"grape","o":"orange"}
+
+        print(dict)
+
+        print(dict["a"])                  #打印键a 对应的值
+
+    </pre>
+    <p>字典的"键"是区分大小写的。例如：dict["a"]与dict["A"]分别指向不同的值，应区别对待。</p>
+    <p>创建字典时，可以使用数字作为索引。</p>
+    <pre>
+        dict = {1:"apple",2:"banana",3:"grape",4:"orange"}
+
+        print(dict)
+
+        print(dict[2])
+
+    </pre>
+    <h5>3.2 字典的访问</h5>
+    <p>字典的访问与元组，列表有所不同，元组和列表是通过数字索引来获取对应的值，而字典是通过key 值获取相应的value 值，访问字典的格式如下：</p>
+    <p>value = dict[key]</p>
+    <p>字典的添加，删除和修改非常简单，添加或修改操作只需要编写一条赋值语句，例如：</p>
+    <p>dict["x"] = "value"</p> 
+    <p>如果索引x不在字典dict的key列表中，字典dict 将添加一条新的映射（x:value）；如果索引x 在字典dict的key 列表中，字典dict 将直接修改索引 x 对应的 value  值。</p>
+    <p>字典与列表不同，字典没有remove()操作。字典元素的删除可以调用del() 实现，del() 属于内建函数，直接调用即可。列表可以调用pop()弹出列表中一个元素，字典也有一个pop(),该方法的声明和作用与列表的pop()有些不同，pop()的声明如下所示：</p>
+    <p>D.pop(k[,d])  --> V</p>
+    <p>pop() 必须指定参数才能删除对应的值。其中，参数 K 表示字典的索引，如果字典D 中存在索引K ，返回值V 等于D[K] ;如果字典D 中没有找到索引K，返回值为 d 。</p>
+    <p>如果要清楚字典中所有的内容，可以调用字典的clear()。 下面的代码演示了这些常用的操作。</p>
+    <pre>
+        # 字典的添加，删除和修改操作
+
+        dict={"a":"apple","b":"banana","g":"grape","o":"orange"}
+
+        dict["w"] = "watermelon"
+
+        del(dict["a"])                    # 删除字典中键为"a" 的元素
+
+        dict["g"] = "grapefruit"          # 修改字典中键为 "g" 的值
+
+        print(dict.pop("b"))              # 弹出字典中键为 "b" 的元素
+
+        print(dict)
+
+        dict.clear()                       # 清除字典中所有的元素
+    </pre>
+    <p>由于字典是无序的，因此字典中没有append() ，remove() 等方法。如果需要向字典中插入新的元素，可以调用setdefault()。这个方法在后面会做介绍。</p>
+    <P>字典的遍历由多种方式，最直接的方式是通过"for ... in ..." 语句完成遍历的任务。下面的代码演示了字典的遍历操作。</P>
+    <pre>
+        # 字典的遍历
+
+        dict={"a":"apple","b":"banana","g":"grape","o":"orange"}
+
+        for k in dict:
+
+            print("dict[%S] = " %k,dict[k])
+    </pre>
+    <p class="Premark">备注：变量k 获取的是字典dict 的key 值，并没有直接获取value 值。因此打印输出时，通过dict[k] 来获取value 值</p>
+    <p>此外，还可以使用字典的items() 实现字典的遍历操作，items() 返回一个由若干元素组成的列表。</p>
+    <pre>
+        # 字典items() 的使用
+
+        dict={"a":"apple","b":"banana","g":"grape","o":"orange"}
+
+        print(dict.items())        # 输出：[("a":"apple"),("b":"banana"),("g":"grape"),("o":"orange")]
+
+        for (k,v) in dict.items():
+
+            print(k)           # 输出：a,b,g,o
+
+            print(v)           # 输出：apple,banana,grape,orange
+    </pre>
+    <h5>3.3 字典的方法</h5>
+    <p>kyes() 和 values() 分别返回字典的key 列表和 value 列表。</p>
+    <pre>
+        dict={"a":"apple","b":"banana","g":"grape","o":"orange"}
+
+        # 输出 key 的列表
+
+        print(dict.keys())
+
+        # 输出value 的列表
+
+        print(dict.values())
+    </pre>
+    <p>前面已经提到，要获取字典中某个value 值，可以使用dict[key] 的结构访问。另一种获取value 值的办法是使用字典的get(),get() 声明如下：</p>
+    <p>D.get(k,[,d]) -->D[k]</p>
+    <p>参数k 表示字典的键值，参数d 可以作为get()的返回值，参数d 可以默认，默认值为None.</p>
+    <p>get()相当于一条if ... else ... 语句，如果参数k在字典D中，get()将返回D[k];如果参数K 不在字典D 中，则返回参数d 。 get()的等价语句如下所示：</p>
+    <pre>
+        # get() 的等价语句
+
+        D = {"key1":"value1","key2":"value2"}
+
+        if "key1" in D:
+
+            print(D["key1"])
+
+        else:
+
+            print("None")
+
+    </pre>
+    <p>下面代码演示get()的使用。</p>
+    <pre>
+        # 字典中元素的获取方法
+
+        dict={"a":"apple","b":"banana","g":"grape","o":"orange"}
+
+        print(dict.get("c","apple"))              # 使用get 获取键为 c 的值，若不存在返回默认值apple
+
+        print(dict.get("e","apple"))              #  使用get 获取键为 e 的值，若不存在返回默认值apple
+
+    </pre>
+    <p>备注：采用get() 访问字典中的value值减少了代码的长度，而且表达方式容易理解，避免了使用if 语句带来的维护代价。</p>
+    <p>如果需要添加新的元素到已经存在的字典中，可以调用字典的update()。update() 把一个字典中的key和value 值全部复制到另一个字典中，update() 相当于一个合并函数。update() 的声明如下所说义：</p>
+    <p>D.update(E)  --> None</p>
+    <p>把字典E 的内容合并到字典D 中，update() 的等价代码如下所示：</p>
+    <pre>
+        D = {"key1":"value1","key2":"value2"}
+
+        E = {"key3":"value3","key4":"value4"}
+
+        for k in E:
+
+            D[k] = E[k]
+
+        print(D)                # 输出：{"key1":"value1","key2":"value2"，"key3":"value3","key4":"value4"}
+
+    </pre>
+    <p class="Premark">如果字典E 中含有与字典D 中相同的键，字典E 的值将覆盖字典D 中的值。字典的update() 也存在同样的问题。如果某些key 在目标字典中已经存在，则更新后新字典中的值将覆盖原有的值。</p>
+    <p class="Premark">字典不属于序列，所以字典没有顺序性。update() 调用后，字典中各元素的排列顺序是无序的。</p>
+    <p>字典的setdefault() 可以创建新的元素并设置默认值。setdefault() 的声明如下所示：</p>
+    <p>D.setdefault(k,[,d]) -- > D.get(k,d)</p>
+    <p>说明：setdefault() 与 get() 的使用有些相似，参数k 表示字典的键值，参数d 表示D[k] 的默认值。 参数d 可以省略，默认值为None .如果参数K 的值在字典D 中，setdefault() 将返回 get(k,d) 获得的结果；如果参数K 的值不在字典D 中，字典D 将添加新的元素D[k],并调用get(k,d)返回参数d 的值。</p>
+    <pre>
+        # 设置默认值
+
+        dict= {}
+
+        dict.setdefault("a")
+
+        print(dict)
+
+        dict["a"] = "apple"
+
+        dict.setdefault("a","None")
+
+        print(dict)
+
+    </pre>
+    <p>字典的常用方法如下所示：</p>
+    <pre>
+        方法名                                            描述            
+
+        items()                                          返回（key,value）元组组成的列表
+
+        iteritems()                                      返回指定字典的遍历器
+
+        setdefault()                                     创建新的元素并设置默认值
+
+        pop(k[,d])                                       移除索引K 对应的value 值，并返回该值
+
+        get(k[,d])                                       返回索引K 对应的value 值
+
+        keys()                                           返回字典中key 的列表‘
+
+        values()                                         返回字典中value 的列表
+
+        update(E)                                        把字典E 中数据扩展到原字典中
+
+        copy()                                           复制一个字典中所有的数据
+    </pre> 
+    <h5>3.4 字典的排序，复制</h5>
+    <p>字典的排序可以使用sorted()实现。代码如下所示：</p>
+    <pre>
+        # 调用 sorted() 排序
+
+        dict= {"a":"apple","b":"grape","c":"orange","d":"banana"}
+
+        # 按照 key 排序
+
+        print(sorted(dict.items(),key = lambda d:d[0]))      # 根据key 值进行排序
+
+        # 按照 value 排序
+
+        print(sorted(dict.items(),key = lambda d:d[1]))       # 根据value 值进行排序
+    </pre>
+    <p class="Premark">备注：items() 前面已经提到过，可以用于字典的遍历，并返回（key,value）元组组成的列表，参数key 表示排序的"依据"，d[0] 表示items()中的key(),即按照key 值进行排序。lambda 可以创建匿名函数，用于返回一些结算结果。</p>
+    <p>前面提到了update(),这个方法把字典A 的内容复制到字典B 中，且字典B 中原有的内容保持不变，从而实现了字典B 的扩展。如果需要把字典A 的内容复制到字典B，并且清除字典B 中原有的内容，可以使用copy()。copy() 声明如下所示。</p>
+    <p>D.copy() --> a shallow copy fo D </p>
+    <p>copy() 实现了字典的浅拷贝操作，后面还会提到深拷贝的概念以及他们的区别，目前只需要知道该方法的使用。</p>
+    <pre>
+        # 字典的浅拷贝
+
+        dict = {"a":"apple","b":"grape"}
+
+        dict2 = {"c":'orange',"d":"banana"}
+
+        dict2 = dict.copy()            # 拷贝dict 并赋给dict2 --》原来dict2 中的内容将被删除
+
+        print(dict2)
+    </pre>
+    <p class="Premark">备注：深拷贝能够拷贝对象内部所有的数据和引用，而浅拷贝只是复制数据，并没有复制数据的引用，新的数据和旧的数据使用同一块内存空间。深拷贝和浅拷贝可以应用于Python 的任何对象，不指是限于字典。在Python 中可以使用copy 模块来实现对象的深拷贝和浅拷贝，deepcopy()用于深拷贝操作，copy()用于浅拷贝操作。</p>
+    <p>下面代码展示了深拷贝和浅拷贝的区别：</p>
+    <pre>
+        # 字典的深拷贝
+
+        import copy
+
+        dict = {"a":"apple","b":{"g":"grape","o":"orange"}}
+
+        dict2 = copy.deepcopy(dict)                  # 深拷贝
+
+        dict3 = copy.copy(dict)                      # 浅拷贝
+
+        dict2["b"]["g"] = "orange"                   # 深拷贝不发生变化
+
+        print(dict)
+
+        dict3["b"]["g"] = "orange"                   # 浅拷贝发生变化
+
+        print(dict)
+    </pre>
+    <p clas="Premark">备注：字典B 浅拷贝字典 A 的数据，如果字典B 的数据发生添加，删除或修改操作，字典A 的数据也将发生变化；相反，如果字典B 深拷贝字典A 的数据，字典B 的数据即使发生变化，也不会影响到字典A 。</p>
+    <h5>3.4 全局字典 --- sys.modules 模块</h5>
+    <p>sys.modules 是一个全局字典，这个字典是Python 启动后就加载在内存中的。每当程序员导入新的模块，sys.modules 都将记录这些模块。字典sys.modules 对加载模块起到了缓存的作用。当某个模块第一次导入时，字典sys.modules 将自动记录该模块。当第2 次再导入次模块时，Python 会直接在字典中查找，从而加快了程序运行的速度。</p>
+    <p>字典sys.modules 具有字典所拥有的一切方法，可以通过这些方法了解当前的环境加载了那些模块。下面这段代码调用了字典的keys()和value()方法，keys()返回当前环境下的加载的模块，values() 返回这些模块的引用路径。</p>
+    <pre>
+        import sys
+
+        print(sys.modules.keys())     # 返回sys模块以及Python 自动加载的模块。
+
+        print(sys.modules.values())   # 返回模块的引用
+
+        print(sys.modules["os"])      # 返回索引"os"对应的引用
+    </pre>
+    <h5>4. 序列</h5>
+    <p>序列是具有索引和切片能力的集合。元组，列表和字符串具有通过索引访问某个具体的值，或通过切片返回一段切片的能力，因此元组，列表和字符串都属于序列。</p>
+    <p>元组和列表都具有序列的特性，但是他们的区别也很明显。元组是只读的一组数据，而且元组没有提供排序和查找的方法。列表具有可读写，而且提供丰富的操作方法，支持排序，查找操作。元组的数据通常具有不同的含义，例如坐标（x,y）可以表示为一个元组，x 轴坐标和y 左边的含义是不同的。列表的数据通常具有相同的含义，例如[(x1,y1),(x2,y2)]表示为一个列表，这个列表中有两组坐标值，每组坐标表示的意义是相同的。他们都表示直角坐标系中的某个位置。</p>
+    <pre>
+                                           元组与列表的区别
+
+                支持负索引      支持分片     支持添加、删除、修改      支持排序、查找     数据的含义
+
+        元组        是             是               否                    否           一组不同  含义的数组成
+      
+
+        列表        是             是               是                   是            一组相同含义的数据组成
+    </pre>
 </div>  

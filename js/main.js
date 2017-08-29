@@ -10,6 +10,7 @@ require.config({
         // "jquery":"https://cdn.bootcss.com/jquery/3.2.1/jquery.js",
         "less": "../libs/less.min",
         "app": "app",
+        "prettify":"prettify",
         "mock": "../libs/mock-min",//mock默认采用AMD规范写的
         "config": "../libs/config",//配置路由
         "AuthorIndex": "../controllers/AuthorIndex_controller",
@@ -61,6 +62,7 @@ require.config({
 require(
     [
         "app",
+        "prettify",
         "config",
         "less",
         "jquery",

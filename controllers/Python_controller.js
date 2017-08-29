@@ -7,22 +7,14 @@ define(["app"], function (app) {
         $scope.categorys = [
             {
                 name: "Pyton", contents: [
-                    { name: "简介", contentName: "Python.Introduction" },
                     { name: "基础语法", contentName: "Python.BasicGrammar" },
                     { name: "控制语句", contentName: "Python.ControlStatement" },
                     { name: "数据结构", contentName: "Python.DataStructure" },
                     { name: "模块与函数", contentName: "Python.Function" },
-                    { name: "字符串与正则表达式", contentName: "Python.StringRegExp" },
+                    { name: "字符串", contentName: "Python.String" },
                     { name: "文件处理", contentName: "Python.FileProcesse" },
                     { name: "面向对象", contentName: "Python.Object" },
-                    { name: "异常处理与程序测试", contentName: "Python.abnormalTest" },
-                    { name: "数据库编程", contentName: "Python.DataBaseCode" },
-                    { name: "GUI开发", contentName: "Python.GUIDev" },
                     { name: "进程与线程", contentName: "Python.processThread" },
-                    { name: "系统管理", contentName: "Python.SysManagement" },
-                    { name: "网络编程", contentName: "Python.NetDev" },
-                    { name: "常见网络应用", contentName: "Python.NetApplication" },
-                    { name: "图像处理", contentName: "Python.Object" },
                     { name: "扩展与嵌入", contentName: "Python.Object" },
                 ]
             },
