@@ -29,9 +29,9 @@
 
         print("浮点型数字：%f" % 1.25)       # 以浮点数格式打印 -->四舍五入取值
 
-        print("浮点型数字：%.1f" % 1.25)      # 精确到小数点后 1 位 -->四舍五入取值
+        print("浮点型数字：%.1f" % 1.25)     # 精确到小数点后 1 位 -->四舍五入取值
 
-        print("浮点型数字：%.2f" % 1.254)      # 精确到小数点后 2 位 -->四舍五入取值
+        print("浮点型数字：%.2f" % 1.254)    # 精确到小数点后 2 位 -->四舍五入取值
     </pre>
     <p class="Premark">备注：默认情况下，将输出小数点后 6 位数字</p>
     <p>此外，Python 还提供了对八进制，十六进制等数字进行格式化的替代符。下表为Python 中格式化字符串的替代符及其含义。</p>
@@ -195,11 +195,182 @@
         sentence = "Bob said :1,2,3,4"
 
         print("使用空格取子串："，sentence.split())     # 默认是用空格进行分割
+        
         print("使用逗号取子串："，sentence.split(","))  
+
         print("使用两个逗号取子串："，sentence.split(",",2))      
     </pre>
-    <h5>字符串的比较</h5>
+    <h5>5. 字符串的比较</h5>
     <p>Python 直接使用 "==" "!=" 操作符比较两个字符串的内容。</p>
     <p>如果要比较字符串中的一部分内容，可以先截取子串，再使用 "==" 操作符进行比较。如果是比较字符串开头或结尾部分，更方便的方法是使用 startswith() 或 endswith() 函数。 其声明如下所示：</p>
-    
+    <p>startswith(substring,[,start,[,end]])</p>
+    <p>参数 substring 是与源字符串开头部分比较的子串。</p>
+    <p>参数 start 表示开始比较的位置。</p>
+    <p>参数 end 表示比较结束的位置，即在 start:end 范围内搜索子串 substring。</p>
+    <p>如果字符串以 substring 开头，则返回True ;否则，返回 False 。</p>
+    <p>以下代码演示了其具体用法：</p>
+    <pre>
+        # 比较字符串的开始和结束处
+
+        word = "hello word"
+
+        print("hello" == word[0:5])
+        
+        print(word.startswith("hello"))
+
+        print(word.endswith("ld",6))
+
+        print(word.endswith("ld",6,10))       # 从word 的第六个字符开始，到底10 个结束，但是不包含第 10 个字符
+
+        print(word.endswith("ld",6,len(word)))   
+    </pre>
+    <p class="Premark">备注：startswith() , endswith() 相当于分片[0:n] ,n 是源字符串中最后一个索引。startswith() , endswith() 不能用于比较源字符串中任意一部分的子串。</p>
+    <h5>6. 字符串的反转</h5>
+    <p>字符串反转是指把字符串最后一个字符移到字符串中第一个位置，按照倒叙的方式依次前移。</p>
+    <p>Python 没有提供对字符串进行反转的函数，也没有类似charAt() 这样的函数。但是可以使用列表和字符串索引来实现字符串的反转，并通过range()进行循环。</p>
+    <pre>
+        # 循环输出反转的字符串
+
+        def reverse(s):
+
+            out = ""
+            
+            li = list(s)                             # s 中的字符串转成列表
+            
+            for i in range(len(li),0,-1):           
+
+                out +="".join(li[i-1])
+
+            return out
+    </pre>
+    <p>不难发现，Python 的实现代码更简短，而且更容易理解。用户还可以通过列表的reverse()函数实现字符串的反转，实现的代码将进一步简化。</p>
+    <pre>
+        # 使用list的reverse()
+        
+        def reverse(s):
+
+            li = list(s)
+
+            li.reverse()
+
+            s = "".join(li)      # 把反转后的列表元素依次连接到变量 s 中
+
+            return s 
+    </pre>
+    <p>Python 的列表是对字符串进行处理的常用方式，灵活使用列表等内置数据结构处理字符串，能够简化编程的复杂度。利用序列的"切片"实现字符串的反转最为简洁，reverse() 函数的主体只需要一行代码即可。</p>
+    <pre>
+        def reverse(s):
+
+            return s[::-1]         # -1 表示从字符串最后一个索引开始倒序排列
+    </pre>
+    <h5>7. 字符串的查找和替换</h5>
+    <p>Python 提供了用于查找和替换的内置功能函数，find() 和 rfind() ，其声明如下：</p>
+    <p>find(substring,[,start [,end]])</p>
+    <p>参数 substring 表示待查找的子串。</p>
+    <p>参数 start 表示开始搜索的索引位置。</p>
+    <p>参数 end 表示结束搜索的索引位置，即在分片[start:end] 中查找。</p>
+    <p>如果找到字符串 substring ,则返回 substring 在源字符串中第 1 次出现的索引。否则，返回 -1。</p>
+    <p>rfind()的参数和find() 相同，不同的是 rfind() 从字符串的尾部开始查找子串。下面这段代码演示了find(), rfind() 的使用：</p>
+    <pre>
+        # 查找字符串
+
+        sentence = "this is a apple"
+
+        print(sentence.find("a"))       # 从头开始找 
+         
+        print(sentence.rfind("a")       # 从后开始找
+    </pre>
+    <p>Python 使用函数 replace() 实现字符串的替换，该函数可以指定替换的次数。但是replace()不支持正则表达式的语法。其声明如下：</p>
+    <p>replace(old,new [,max])</p>
+    <p>参数 old 表示将被替换的字符串。</p>
+    <p>参数 new 表示替换 old 的字符串。</p>
+    <p>参数 max 表示使用 new 替换 old 的次数。</p>
+    <p>函数返回一个新的字符串。如果子串 old 不在源字符串中，则函数返回源字符串的值。</p>
+    <p>下面这段代码演示了replace() 的使用：</p>
+    <pre>
+         # 字符串的替换
+
+        sentence = "hello world ,hello china"
+
+        print(sentence.replace("hello","hi"))
+
+        print(sentence.replace("hello","hi",1))      # 值替换第 1 处的 hello 
+        
+        print(sentence.replace("abc","hi")           # 源字符串中没有"abc" ,返回源字符串本身
+    </pre>
+    <p class="Premark">备注：replace() 先创建变量 sentence 的拷贝，然后在拷贝中替换字符串，并不会改变变量 sentence 的内容。</p>
+    <h5>8. 字符串与日期的转换</h5>
+    <p>在开发中，经常把日期类型转换为字符串类型使用。字符串与日期的转换时工作中频繁遇到的问题。Python 提供了 time 模块处理日期和时间。函数 strftime() 可以实现从时间到字符串的转换。strftime() 声明如下：</p>
+    <p>strftime(format[,tuple])  --> string</p>
+    <p>参数 format 表示格式化日期的特殊字符。例如，“%Y-%m-%d" 相当于Java 中的 "yyyy-MM-dd" 。</p>
+    <p>参数 tuple 表示需要转换的时间，用元组存储。元组中的元素分别表示年，月，日，时，分，秒。</p>
+    <p>函数返回一个表示时间的字符串。</p>
+    <p>参数 format 格式化日期的常用标记如下：</p>
+    <pre>
+                            <b>格式化日期的常用标记</b>          
+            <b>符号</b>                                        <b>描述</b>
+
+             %a                                                 英文星期的简写            
+
+             %A                                                 英文星期的完整拼写
+
+             %b                                                 英文月份的简写
+
+             %B                                                 英文月份的完整拼写
+
+             %c                                                 显示本地的日期和时间
+             
+             %d                                                 日期数，取值在1 ~ 31 之间
+
+             %H                                                 小时数，取值在00 ~ 23 之间
+
+             %I                                                 小时数，取值在01 ~ 12 之间
+
+             %m                                                 月份，取值在01 ~ 12 之间
+
+             %M                                                 分钟数，取值在01 ~ 59 之间
+
+             %j                                                 显示从本年第 1 天开始到当天的天数
+
+             %w                                                 显示今天是星期几，0 表示星期天
+
+             %W                                                 显示当天属于本年的第几周，以星期一作为一周的第一天进行计算
+
+             %x                                                 本地的当天日期
+
+             %X                                                 本地的当天时间
+
+             %y                                                 年份，取值在00 ~ 99 之间
+
+             %Y                                                 年份完成的数字
+    </pre>
+    <p>字符串到时间的转换需要进行两次转换，需要使用time 模块和 datetime 类，转换过程分为如下 3 个步骤：</p>
+    <p>1) 调用函数 strptime() 把字符串转化为一个元组，进行第 1 次转换。strptime() 的声明如下所示：</p>
+    <p>strptime(string,format)  --> struct_time</p>
+    <p>参数 string 表示需要转换的字符串。</p>
+    <p>参数 format 表示日期时间的输出格式。</p>
+    <p>函数返回一个存放时间的元组。</p>
+    <p>2) 把表示时间的元组赋值给表示年，月，日的 3 个变量。</p>
+    <p>3) 把表示年，月，日的 3 个变量传递给datetime(),进行第 2 次转换。datetime() 类的datetime()函数如下所示：</p>
+    <p>datetime(year,month,day[,hour[,minute[,second[,microsecond[,tzinfo]]]]])</p>
+    <p>参数 year,month,day 分别表示年，月，日，这 3 个参数必不可少。</p>
+    <p>函数返回 1 个datetime 类型的变量。</p>
+    <p>下面这段代码演示了时间到字符串，字符串到时间的转换过程。</p>
+    <pre>
+        import time,datetime
+
+        # 时间到字符串的转换
+
+        print(time.strftime("%Y-%m-%d %X",time.localtime())
+
+        # 字符串到时间的转换
+
+        t = time.strptime("2008-08-08","%Y-%m-%d")         # 返回一个存放时间的元组
+
+        y,m,d = t[0:3]
+
+        print(datetime.datetime(y,m,d))                    # datetime() 返回时间类型 
+    </pre>
+    <p class="Premark">备注：函数 localtime() 返回当前的时间。格式化日期的特殊标记是区分大小写的，%Y 与 %y 不相同。</p>
+
 </div>  
