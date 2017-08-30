@@ -11,6 +11,7 @@ require.config({
         "less": "../libs/less.min",
         "app": "app",
         "prettify":"prettify",
+        "bootstrap":"../libs/bootstrap.min",
         "mock": "../libs/mock-min",//mock默认采用AMD规范写的
         "config": "../libs/config",//配置路由
         "AuthorIndex": "../controllers/AuthorIndex_controller",
@@ -63,6 +64,7 @@ require(
     [
         "app",
         "prettify",
+        "bootstrap",
         "config",
         "less",
         "jquery",
