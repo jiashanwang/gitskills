@@ -1,7 +1,13 @@
 ﻿<!-- <div id="Essay" ng-controller="Essay_controller">
     这个是一个随笔的页面
 </div> -->
-<div id="EssayContent">
+<!-- <div id="EssayContent">
     <div class="PageLeftBar" ui-view="leftBar"></div>
     <div class="PageRightBar" ui-view="rightMain"></div>
-</div>
+</div> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 borderLine" ui-view="leftBar"></div>
+        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-12" ui-view="rightMain"></div>
+    </div>
+</div>  

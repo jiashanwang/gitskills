@@ -31,6 +31,9 @@ require.config({
             deps: ["angular"],
             exports: "ui.router"
         },
+        "bootstrap":{
+            deps:["jquery"]
+        }
     },
     // deps:["app"]
 });
