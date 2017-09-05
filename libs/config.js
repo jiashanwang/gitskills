@@ -79,6 +79,14 @@ define(["app"], function (app) {
                 }
             }
         })
+        .state("Python.MongoDB", {//MongoDB
+            url: "/MongoDB",
+            views: {
+                "rightMain@Python": {
+                    templateUrl: 'pages/Python/MongoDB.html',
+                }
+            }
+        })
         .state("Python.Pymongo", {//Pymongo
             url: "/Pymongo",
             views: {

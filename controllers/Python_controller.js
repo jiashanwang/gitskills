@@ -27,20 +27,20 @@ define(["app"], function (app) {
             },
             {
                 name: "Standard library", contents: [
-                    { name: "dateTime", contentName: "python.dateTime" },
-                    { name: "OS", contentName: "python.OS" }
+                    { name: "dateTime", contentName: "Python.dateTime" },
+                    { name: "OS", contentName: "Python.OS" }
                 ]
             },
             {
                 name: "Flasky", contents: [
-                    { name: "jinja2", contentName: "python.jinja2" },
-                    { name: "Flack-Mail", contentName: "python.FlackMail" }
+                    { name: "jinja2", contentName: "Python.jinja2" },
+                    { name: "Flack-Mail", contentName: "Python.FlackMail" }
                 ]
             },
             {
                 name: "Docker", contents: [
-                    { name: "Docker1", contentName: "python.Docker1" },
-                    { name: "Docker2", contentName: "python.Docker2" }
+                    { name: "Docker1", contentName: "Python.Docker1" },
+                    { name: "Docker2", contentName: "Python.Docker2" }
                 ]
             }
         ];
