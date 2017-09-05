@@ -1,0 +1,142 @@
+﻿<div id="PythonDataStructure">
+    <h4 style="color:#666">Pymongo - 简单使用</h4>
+    <hr>
+    <p class="lineHight">平常在处理数据的时候，必不可少地要使用数据库存取数据.由于公司项目用的 MongoDB 数据库，而且平时都是用 Pymongo 进行操作，所以结合官方文档对 Pymongo 做了一下梳理。此部分比较基础。对新人来讲是一个很好的入门。</p>
+    <h5 class="fontColor">对pymongo的简单说明：</h5>
+    <p class="lineHight">pymongo是Python中用来操作MongoDB的一个库。而MongoDB是一个基于分布式文件存储的数据库，旨在为WEB应用提供可扩展的高性能数据存储解决方案。其文件存储格式类似于JSON，叫BSON，不严谨、通俗地理解，就是Python中的字典键值对格式。</p>
+    <p>所以要利用Python操作MongoDB，有以下两个步骤：</p>
+    <p>1) 在电脑上安装MongoDB；</p>
+    <p>2) 在Python上装入pymongo的库。</p>
+    <p>在使用pymongo前，除了需要到安装pymongo库以外，还需要到官网下载并安装MongoDB数据库到本地。MongoDB官网：https://www.mongodb.com/</p>
+    <p>安装了MongoDB后，需要在cmd中配置数据库。在命令行中输入：</p>
+    <pre class="Premark"> mongod --dbpath x:\MongoDB\data</pre>
+    <p class="Premark">
+        备注：此处的路径表示你要创建数据库的文件夹，其中data文件夹需要自己在MongoDB路径下创建，系统不会在动帮你生成。
+    </p>
+    <p>以上步骤完成后可以在浏览器中输入：http://localhost:27017/。如果看到信息"It looks like you are trying to access MongoDB over HTTP on the native
+        driver port."说明已经成功，可以开始使用了。</p>
+    <h5 class="fontColor">1. 连接MongoClient</h5>
+    <p>使用pymongo的第一步首先是连接Client来使用服务：</p>
+    <pre class="Premark">        from pymongo import MongoClient
+
+        Client = MongoClient()</pre>
+    
+    <h5 class="fontColor">2. 获取数据库（database）</h5>
+    <p>在MongoDB中一个实例能够支持多个独立的数据库，你可以用点取属性的方式来获取数据库，或者通过字典的方式获取：</p>
+    <pre class="Premark">
+        db = Client.test_database
+
+        db = Client['test_database']</pre>
+    
+    <p class="Premark">
+        备注：'test'可以换成你想要用的名字，比如"python_database"。
+    </p>
+    <h5 class="fontColor">3. 获取Collection</h5>
+    <p>Collection是存储在MongoDB中的一组文件，同获取database一样，你可以用点取属性的方式或者字典的方法获取：</p>
+    <pre class="Premark">
+        collection = db.test_collection
+
+        collection = db['test_collection']</pre>
+    
+    <h5 class="fontColor">4. 存储数据</h5>
+    <p>
+        在MongoDB中，数据是以BSON的类型存储的。见下面的post:
+    </p>
+    <pre class="Premark">
+        import datetime
+
+        post = {
+
+            'type':'BSON',
+
+            'date':datetime.datetime.utcnow()
+        } </pre>
+   
+    <p>了解完MongoDB的数据格式后，你可以通过以下的方式插入数据（其中.inserted_id将返回ObjectId对象）：</p>
+    <pre class="Premark">
+        document1 = ｛'x':1｝
+
+        document2 = ｛'x':2｝
+
+        posts = db.posts     #你也可以不这样做，每次通过db.posts调用
+
+        post_1 = posts.insert_one(document1).inserted_id
+
+        post_2 = posts.insert_one(document2).inserted_id </pre>
+   
+    <p>每个插入的数据对应一个ObjectId，可直接查看：</p>
+    <pre class="Premark">
+        >>>post_1
+
+        ObjectId(...)
+
+        >>>post_2
+
+        ObjectId(...)  </pre>
+  
+    <p>你还可以用insert_many()插入多个文档：</p>
+    <pre class="Premark">
+        new_document = [{'x':3}, {'x':4}]
+                           
+        result = posts.insert_many(new_document)
+
+        >>>result.inserted_ids
+
+        [ObjectId(...),ObjectId(...)] </pre>
+   
+    <h5 class="fontColor">5. 从MongoDB中调用数据</h5>
+    <p>find_one()函数能够从数据库中调出已存储的数据：</p>
+    <pre>
+        >>>posts.find_one()
+
+        ['x':'1']  </pre>
+  
+    <p class="lineHight">
+        但用find_one()的方法只能获取一个数据，如果数据库中存在多个数据时，它返回的是第一个的值。你也可以通过ObjectId来请求数据，效果和上面是一样的。如果你想打印出全部数据，可以通过迭代的方式获取： </p>
+    <pre class="Premark">
+        >>>for data in posts.find():
+                data
+        >>>
+        {
+            u'x':1,
+            u'x':2,
+            u'x':3,
+            u'x':4
+        }  </pre>
+  
+    <p>你也可以加入限制性因素来获取特定的数据：</p>
+    <pre class="Premark">
+        >>> for post in posts.find({'x':1}):
+        >>>      post
+        >>>
+        {u'x':1}</pre>
+    
+    <p class="Premark"> 
+        查找条件中也可以用正则匹配来匹配value。
+    </p>
+    <h5 class="fontColor">6. 更新数据</h5>
+    <p>在pymongo中可以用update_one()来更新数据：</p>
+    <pre class="Premark">   
+        >>>posts.update_one({'x':4},{'$set':{'x':3}}) </pre>
+   
+    <p class="lineHight">
+        其中传入的第一个参数是你想要更新的数据，第二个是你想要更新的最新数据。其中$set部分是必要元素，如果没有会报出错误。除了$set外还有很多其它的比如$inc，对应着不同的功能，在此先不赘述。
+    </p>
+    <p class="Premark">
+        上面只是更新匹配到的第一个数据，同样地，也可以用update_many()一次更新多个值。
+    </p>
+    <h5 class="fontColor">7. 删除数据</h5>
+    <p>同上，可以用delete_one()和delete_many()方法来删除数据，括号中是筛选条件：</p>
+    <pre class="Premark">
+        >>>posts.delete_one({'x':3})
+        >>>posts.delete_one({'x':2})</pre>
+    
+     <h5 class="fontColor">8. 计数</h5>
+     <p>如果想知道collection中有多少文档，可以用.count()请求来获取符合条件的文档。</p>
+     <pre class="Premark">
+        >>>posts.count()
+        4
+        >>>posts.find({'x':1})
+        1</pre>
+     
+</div>

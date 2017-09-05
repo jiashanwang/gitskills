@@ -20,8 +20,9 @@ define(["app"], function (app) {
             },
             {
                 name: "dataBase", contents: [
-                    { name: "MongoDB", contentName: "python.MongoDB" },
-                    { name: "MySQL", contentName: "python.MySQL" },
+                    { name: "MongoDB", contentName: "Python.MongoDB" },
+                    { name: "MySQL", contentName: "Python.MySQL" },
+                    { name: "Pymongo", contentName: "Python.Pymongo" },
                 ]
             },
             {

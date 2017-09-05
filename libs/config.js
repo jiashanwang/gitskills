@@ -79,6 +79,14 @@ define(["app"], function (app) {
                 }
             }
         })
+        .state("Python.Pymongo", {//Pymongo
+            url: "/Pymongo",
+            views: {
+                "rightMain@Python": {
+                    templateUrl: 'pages/Python/Pymongo.html',
+                }
+            }
+        })
         .state("Python.String", {//字符串
             url: "/String",
             views: {
