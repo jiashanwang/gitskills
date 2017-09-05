@@ -5,6 +5,24 @@ html, body, ul {
 ul,ol {
     list-style:none;
  }
+@media screen and (max-width: 1560px){
+      #navbarList li {
+        width:5.125em !important;
+    }
+}
+@media screen and (max-width: 1221px){
+      #navbarList li {
+        width:2.125em !important;
+    }
+}
+@media screen and (max-width: 900px){
+      #navbarList li {
+        width:1.125em !important;
+    }
+    #topNavigator ul li.author a{
+        width:5em;
+    }
+}
 @fontSize:28px;
 @backColorH:#999;
 .borderLine{
@@ -47,6 +65,7 @@ ul,ol {
     a{
         color:#fff;
         &:hover{
+            cursor:pointer;
             background:#0482BA !important;
         }
    
@@ -149,4 +168,17 @@ pre{
     text-align:center;
     color:#005500;
     }
+}
+.addBackColor{
+    background-color:#0482BA;
+}
+.topFixed{
+   margin-top:50px;
+}
+.lineHight{
+    line-height:26px;
+}
+.fontColor{
+    color:#000;
+    font-weight: bold;
 }

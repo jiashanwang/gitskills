@@ -1,14 +1,4 @@
-﻿<!-- <div id="topBar">
-    <ul>
-        <li class="author"><a ui-sref="AuthorIndex"><i>家</i>&emsp; 里 的 金 &emsp;<i>山</i></a></li>  
-        <li><a ui-sref="JavaScript">JavaScript</a></li>
-        <li><a ui-sref="Python">Python</a></li> 
-        <li><a ui-sref="Internet">Internet</a></li>
-        <li><a ui-sref="Essay">Essay</a></li> 
-        <li><a ui-sref="Others">Others</a></li> 
-    </ul> 
-</div> -->
-<nav id="topNavigator" class="label-default navbar-responsive">
+﻿<nav id="topNavigator" class="label-default navbar-responsive" ng-controller="Index_controller" ng-init="InitPage()">
     <div class="container-fluid">
         <div data-toggle="collapse" data-target=".navbar-right">
             <button type="button" class="btn btn-info btn-md hidden-lg hidden-md hidden-sm pull-right ;">
@@ -17,12 +7,15 @@
         </div>
         <div class="navbar-right navbar-collapse collapse pull-left">
             <ul class="nav navbar-nav nav-pills" id="navbarList">
-                <li class="author"><a ui-sref="AuthorIndex"><i>家</i>&emsp; 里 的 金 &emsp;<i>山</i></a></li> 
-                <li><a ui-sref="JavaScript">JavaScript</a></li>
+                <li class="author"><a ui-sref="AuthorIndex"><i>家</i>&emsp; 里 的 金 &emsp;<i>山</i></a></li>
+                 <li><a ui-sref="JavaScript">JavaScript</a></li>
                 <li><a ui-sref="Python">Python</a></li>
                 <li><a ui-sref="Internet">Internet</a></li>
                 <li><a ui-sref="Essay">Essay</a></li>
-                <li><a ui-sref="Others">Others</a></li>
+                <li><a ui-sref="Others">Others</a></li> 
+                <!-- <li ng-repeat="item in navbars" ng-click="addBackColor(item)" ng-class="{true:'addColor',false:'subColor'}[item.colorStatus]">{{item.name}}
+                    <a ui-sref="item.name"></a>
+                </li> -->
             </ul>
         </div>
     </div>

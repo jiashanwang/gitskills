@@ -15,7 +15,7 @@ define(["app"], function (app) {
             },
             {
                 name: "CSS", contents: [
-                    { name: "transform", contentName: "JavaScript.transform" },
+                    { name: "transition", contentName: "JavaScript.transition" },
                     { name: "动画", contentName: "JavaScript.animation" },
                     { name: "cursor-新特性", contentName: "JavaScript.newKind" }
                 ]

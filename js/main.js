@@ -10,10 +10,11 @@ require.config({
         // "jquery":"https://cdn.bootcss.com/jquery/3.2.1/jquery.js",
         "less": "../libs/less.min",
         "app": "app",
-        "prettify":"prettify",
-        "bootstrap":"../libs/bootstrap.min",
+        "prettify": "prettify",
+        "bootstrap": "../libs/bootstrap.min",
         "mock": "../libs/mock-min",//mock默认采用AMD规范写的
         "config": "../libs/config",//配置路由
+        "Index":"../controllers/Index_controller",
         "AuthorIndex": "../controllers/AuthorIndex_controller",
         "JavaScript": "../controllers/JavaScript_controller",
         "Python": "../controllers/Python_controller",
@@ -31,8 +32,8 @@ require.config({
             deps: ["angular"],
             exports: "ui.router"
         },
-        "bootstrap":{
-            deps:["jquery"]
+        "bootstrap": {
+            deps: ["jquery"]
         }
     },
     // deps:["app"]
@@ -71,6 +72,7 @@ require(
         "config",
         "less",
         "jquery",
+        "Index",
         "AuthorIndex",
         "JavaScript",
         "Python",
@@ -79,13 +81,12 @@ require(
         "Others"
     ],
     function () {
+
         //angular.element()方法：当document加载完成的时候，开始执行回调
         angular.element(document).ready(function () {
             //手动启动angular模块 整个document被myApp模块接管控制
             angular.bootstrap(document, ["myApp"]);
         });
-
-
     });
 
 

@@ -148,6 +148,14 @@ define(["app"], function (app) {
                 }
             }
         })
+        .state("JavaScript.transition", { //变量，作用域，内存问题
+            url: "/transition",
+            views: {
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/Transition.html',
+                }
+            }
+        })
         .state("Others", {
             url: "/Others",
             views: {
