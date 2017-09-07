@@ -3,7 +3,8 @@ define(["app"], function (app) {
         // 初始化变量
         $scope.categorys = [
             { name: "apidoc", contentName: "Others.apidoc" },
-            { name: "gulp", contentName: "Others.gulp" }
+            { name: "gulp", contentName: "Others.gulp" },
+            { name: "Git", contentName: "Others.Git" }
         ];
         function changeItemActive() {
             for (var i = 0, len = $scope.categorys.length; i < len; i++) {

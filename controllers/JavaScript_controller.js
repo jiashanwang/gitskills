@@ -52,6 +52,12 @@ define(["app"], function (app) {
                     { name: "路由", contentName: "JavaScript.transform" },
                     { name: "模块", contentName: "JavaScript.transform" }
                 ]
+            },
+            {
+                name: "Others", contents: [
+                    { name: "浏览器跨域", contentName: "JavaScript.CrossDomain" }
+                   
+                ]
             }
         ];
         // 每一列背景色切换--》代码封装

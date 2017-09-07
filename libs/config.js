@@ -172,6 +172,14 @@ define(["app"], function (app) {
                 }
             }
         })
+        .state("JavaScript.CrossDomain", { //JS 跨域请求
+            url: "/CrossDomain",
+            views: {
+                "rightMain@JavaScript": {
+                    templateUrl: 'pages/JavaScript/CrossDomain.html',
+                }
+            }
+        })
         .state("Others", {
             url: "/Others",
             views: {
@@ -198,14 +206,24 @@ define(["app"], function (app) {
                     templateUrl: 'pages/Others/apidoc.html',
                 }
             }
-        }).state("Others.gulp", {
+        })
+        .state("Others.gulp", {
             url: "/gulp",
             views: {
                 "OthersRightMain@Others": {
                     templateUrl: 'pages/Others/gulp.html',
                 }
             }
-        }).state("Internet", {
+        })
+        .state("Others.Git", {//Git 
+            url: "/Git",
+            views: {
+                "OthersRightMain@Others": {
+                    templateUrl: 'pages/Others/Git.html',
+                }
+            }
+        })
+        .state("Internet", {
             url: "/Internet",
             views: {
                 '': {

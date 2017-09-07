@@ -78,7 +78,77 @@
             if (x > 0):
                 return x
         print(filter(func,range(-9,10)))
-        print(lsit(filter(func,range(-9,10))))
-    </pre>
+        print(lsit(filter(func,range(-9,10))))  </pre>
+  
+    <p class="lineHight">使用range()生成待处理的列表，然后把该列表的值依次传入func()。func返回结果给filter() ，最后将结果yield 成一个iterable 对象返回，可以进行遍历。输出结果如下：<filter object at 0x000002C8A0DEE160</p>
     <p class="Premark">备注：filter()中的过滤函数func()的参数不能为空，否则，没有可以存储sequence元素的变量，func()也不能处理过滤。</p>
+    <p>2. reduce()</p>
+    <p class="lineHight">
+        对序列中元素的连续操作可以通过循环来处理。例如，对某个序列中的元素累加操作。Python 提供的reduce() 也可以实现连续处理的功能。在Python 2 中reduce()存在于全局空间中，可以直接调用。而在Python 3 中将其移到了functools 模块中，所以使用之前需要先引入。reduce() 的声明如下所示：
+    </p>
+    <p class="Premark">reduce(func,sequence[,initial])</p>  -->value
+    <p>参数func 是自定义的函数，在函数func() 中实现对参数sequence 的连续操作。</p>
+    <p>参数 sequence 待处理的序列。</p>
+    <p>参数 initial 可以省略，如果initial 不为空，则initial 的值将首先传入func() 进行计算。如果sequence为空，则对initial 的值进行处理。</p>
+    <p>reduce() 的返回值是 func() 计算后的结果。</p>
+    <p>下面对一个列表的数字进行累加的操作。</p>
+    <pre class="Premark">
+        def sum(x,y):
+            return x+y
+        from functools import reduce             # 引入 reduce 
+        print(reduce(sum,range(0,10)))           # 对0+1+2+3+4+5+6+7+8+9 执行累加计算，输出结果为45
+        print(reduce(sum,range(0,10),10))        # 对10+0+1+2+3+4+5+6+7+8+9 执行累加计算，输出结果为55
+        print(reduce(sum,range(0,0),10))         # 由于range(0,0) 返回空列表，所以返回结果就是 10 。输出结果为 10 
+     </pre>
+    <p class"Premak">
+        reduce() 还可以对数字进行乘法，阶乘等复杂的累计计算。如果用reduce() 进行累计计算，必须在 sum 中定义两个参数，分别对应加法运算符两侧的操作数。
+    </p>
+    <p>3. map()</p>
+    <p>map() 的功能非常强大，可以对多个序列的每个元素都执行相同的操作，并返回一个map 对象。map() 的声明如下所示：</p>
+    <pre class="Premark">
+        class map(object)
+            map(func,*iterables)   --> map object </pre>
+   <p>func 是自定义函数，实现对序列每个元素的操作。</p>
+   <p>参数 iterable 是待处理的序列，参数 iterables 的个数可以是多个.</p>
+   <p>map() 的返回值是对序列元素处理后的列表。</p>
+   <p>代码如下所示：</p>
+   <pre class="Premark">
+        def power(x):
+            return x**x
+        print(map(power,range(1,5)))                       # 将数字1,2,3,4 依次传入函数power 中，将计算结果生成一个 map 对象
+        print(list(map(power,range(1,5))))                 # 转换为列表输出
+
+        def power2(x,y):
+            return x**y
+        print(map(power2,range(1,5),range(5,1,-1)))        # 提供了两个列表参数。依次计算 1^5,2^4,3^3,4^2,将计算结果生成一个 map 对象 
+        print(list(map(power2,range(1,5),range(5,1,-1)))   # 转换为列表输出 </pre>
+    <p class="Premark">
+        备注： 如果map() 中提供多个序列，则每个序列中的元素一一对应进行计算，如果每个序列的长度不相同个，则短的序列后补充None ，再进行计算。
+    </p>
+    <pre class="Premark">
+                                        内置模块的函数
+                函数                                                      描述
+                abs(x)                                               返回 x 的绝对值
+                bool([x])                                            把一个值或者表达式转换为bool 类型。如果表达式 x 为值，返回 true;否则，返回 false 
+                len(obj)                                             对象包含的元素个数
+                range([start,] end [,step])                          生成一个列表并返回
+                reduce(func,sequence[,initial])                      对序列的值进行累加计算
+                round(x,n=0)                                         四舍五入函数
+                float(x)                                             把数字或字符串转换成float
+                hash(object)                                         返回一个对象的hash 值
+                help([object])                                       返回内置函数的帮助说明
+                id(x)                                                返回一个对象的标识
+                input([prompt])                                      接收控制台的输入，并把输入的值转换为数字
+                int(x)                                               把数字或字符串转换成整型
+                set([itrable])                                       返回一个set 集合
+                sorted(iterable[,cmp[,key[,reverse]]])               返回一个排序后的列表
+                sum(iterable[,start=0])                              返回一个序列的和
+                type(obj)                                            返回一个对象的类型
+                zip(iter1 [,iter2 [...]])                            把 n 个序列作为列表的元素返回
+                eval(s[,globals[,locals]])                           计算表达式的值
+                delattr(obj,name)                                    等价于 del obj.name </pre>
+    <p class="fontColor">5. 自定义包</p>
+    <p class="lineHight">
+        包就是一个至少包含__init__.py 文件的文件夹。Python 包
+    </p>
 </div>
