@@ -55,7 +55,7 @@ define(["app"], function (app) {
             },
             {
                 name: "Others", contents: [
-                    { name: "浏览器跨域", contentName: "JavaScript.CrossDomain" }
+                    { name: "jsonp跨域", contentName: "JavaScript.Jsonp" }
                    
                 ]
             }

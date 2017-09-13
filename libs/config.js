@@ -172,11 +172,11 @@ define(["app"], function (app) {
                 }
             }
         })
-        .state("JavaScript.CrossDomain", { //JS 跨域请求
-            url: "/CrossDomain",
+        .state("JavaScript.Jsonp", { //JS 跨域请求
+            url: "/Jsonp",
             views: {
                 "rightMain@JavaScript": {
-                    templateUrl: 'pages/JavaScript/CrossDomain.html',
+                    templateUrl: 'pages/JavaScript/Jsonp.html',
                 }
             }
         })
